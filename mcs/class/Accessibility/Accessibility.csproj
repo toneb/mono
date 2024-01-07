@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <EnableDefaultItems>false</EnableDefaultItems>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+        <DisableExtraReferences>true</DisableExtraReferences>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DefineConstants>NET_4_6;MONO</DefineConstants>
+        
+        <SignAssembly>true</SignAssembly>
+        <DelaySign>true</DelaySign>
+        <AssemblyOriginatorKeyFile>..\msfinal.pub</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Compile Include="Accessibility/IAccessible.cs" />
+        <Compile Include="Accessibility/IAccessibleHandler.cs" />
+        <Compile Include="Assembly/AssemblyInfo.cs" />
+        <Compile Include="../../build/common/Consts.cs" />
+    </ItemGroup>
+
+</Project>

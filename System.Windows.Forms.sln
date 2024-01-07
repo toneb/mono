@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accessibility", "mcs\class\Accessibility\Accessibility.csproj", "{BB7C610F-B6CF-434A-B5F6-40E8322E9125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Posix.NETStandard-netstandard_2_0", "mcs\class\Mono.Posix\Mono.Posix.NETStandard-netstandard_2_0.csproj", "{37F39BD1-9552-4F79-93DF-BA460F6E53C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Drawing", "mcs\class\System.Drawing\System.Drawing.csproj", "{FE3C1D7D-A30D-4AC5-A617-106C5DA9F4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms", "mcs\class\System.Windows.Forms\System.Windows.Forms.csproj", "{70B74AED-DD1F-4DCA-89E9-0E1FAD39BF5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB7C610F-B6CF-434A-B5F6-40E8322E9125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7C610F-B6CF-434A-B5F6-40E8322E9125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7C610F-B6CF-434A-B5F6-40E8322E9125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7C610F-B6CF-434A-B5F6-40E8322E9125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F39BD1-9552-4F79-93DF-BA460F6E53C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F39BD1-9552-4F79-93DF-BA460F6E53C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F39BD1-9552-4F79-93DF-BA460F6E53C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F39BD1-9552-4F79-93DF-BA460F6E53C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3C1D7D-A30D-4AC5-A617-106C5DA9F4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3C1D7D-A30D-4AC5-A617-106C5DA9F4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3C1D7D-A30D-4AC5-A617-106C5DA9F4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3C1D7D-A30D-4AC5-A617-106C5DA9F4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B74AED-DD1F-4DCA-89E9-0E1FAD39BF5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B74AED-DD1F-4DCA-89E9-0E1FAD39BF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B74AED-DD1F-4DCA-89E9-0E1FAD39BF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B74AED-DD1F-4DCA-89E9-0E1FAD39BF5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
