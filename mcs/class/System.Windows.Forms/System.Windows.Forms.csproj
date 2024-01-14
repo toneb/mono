@@ -9,17 +9,14 @@
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <DefineConstants>NET_4_6;MONO</DefineConstants>
-        
+
         <NoWarn>CS0618;SYSLIB0003;CS0809;SYSLIB0011;SYSLIB0014;CS0612;SYSLIB0012</NoWarn>
 
         <SignAssembly>true</SignAssembly>
         <DelaySign>true</DelaySign>
-        <AssemblyOriginatorKeyFile>..\msfinal.pub</AssemblyOriginatorKeyFile>
-
-        <RootNamespace>System.Windows.Forms</RootNamespace>
-        <AssemblyName>XPlat.System.Windows.Forms</AssemblyName>
+        <AssemblyOriginatorKeyFile>..\Open.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <ProjectReference Include="..\Accessibility\Accessibility.csproj" />
         <ProjectReference Include="..\Mono.Posix\Mono.Posix.NETStandard-netstandard_2_0.csproj" PrivateAssets="All" />
@@ -27,57 +24,61 @@
 
         <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
         <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+        <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="resources/16_computer.png" />
-        <EmbeddedResource Include="resources/32_computer.png" />
-        <EmbeddedResource Include="resources/computer.png" />
-        <EmbeddedResource Include="resources/16_document-open.png" />
-        <EmbeddedResource Include="resources/32_document-open.png" />
-        <EmbeddedResource Include="resources/document-open.png" />
-        <EmbeddedResource Include="resources/16_folder.png" />
-        <EmbeddedResource Include="resources/folder-new.png" />
-        <EmbeddedResource Include="resources/folder.png" />
-        <EmbeddedResource Include="resources/16_folder-remote.png" />
-        <EmbeddedResource Include="resources/32_folder-remote.png" />
-        <EmbeddedResource Include="resources/folder-remote.png" />
-        <EmbeddedResource Include="resources/go-previous.png" />
-        <EmbeddedResource Include="resources/go-top.png" />
-        <EmbeddedResource Include="resources/22_page-magnifier.png" />
-        <EmbeddedResource Include="resources/preferences-system-windows.png" />
-        <EmbeddedResource Include="resources/16_printer.png" />
-        <EmbeddedResource Include="resources/32_printer.png" />
-        <EmbeddedResource Include="resources/text-x-generic.png" />
-        <EmbeddedResource Include="resources/16_user-desktop.png" />
-        <EmbeddedResource Include="resources/32_user-desktop.png" />
-        <EmbeddedResource Include="resources/user-desktop.png" />
-        <EmbeddedResource Include="resources/16_user-home.png" />
-        <EmbeddedResource Include="resources/32_user-home.png" />
-        <EmbeddedResource Include="resources/user-home.png" />
-        <EmbeddedResource Include="resources/16_dialog-error.png" />
-        <EmbeddedResource Include="resources/16_dialog-information.png" />
-        <EmbeddedResource Include="resources/16_dialog-warning.png" />
-        <EmbeddedResource Include="resources/1-up.png" />
-        <EmbeddedResource Include="resources/2-up.png" />
-        <EmbeddedResource Include="resources/3-up.png" />
-        <EmbeddedResource Include="resources/4-up.png" />
-        <EmbeddedResource Include="resources/6-up.png" />
-        <EmbeddedResource Include="resources/nav_delete.png" />
-        <EmbeddedResource Include="resources/nav_end.png" />
-        <EmbeddedResource Include="resources/nav_first.png" />
-        <EmbeddedResource Include="resources/nav_previous.png" />
-        <EmbeddedResource Include="resources/nav_next.png" />
-        <EmbeddedResource Include="resources/nav_plus.png" />
-        <EmbeddedResource Include="resources/image-missing.png" />
-        <EmbeddedResource Include="resources/image-x-generic.png" />
-        <EmbeddedResource Include="resources/propertygrid-alphabetical.png" />
-        <EmbeddedResource Include="resources/propertygrid-categorized.png" />
-        <EmbeddedResource Include="resources/EventsTab.bmp" />
-        <EmbeddedResource Include="resources/PropertiesTab.bmp " />
-        <EmbeddedResource Include="resources/propertygrid-propertypages.png" />
-        <EmbeddedResource Include="resources/mono.ico" />
-        <EmbeddedResource Include="resources/errorProvider.ico" />
+        <EmbeddedResource Include="resources/System.Windows.Forms.resx" LogicalName="System.Windows.Forms.resources" />
+        <EmbeddedResource Include="resources/keyboards.resx" LogicalName="keyboards.resources" />
+
+        <EmbeddedResource Include="resources/16_computer.png" LogicalName="16_computer.png" />
+        <EmbeddedResource Include="resources/32_computer.png" LogicalName="32_computer.png" />
+        <EmbeddedResource Include="resources/computer.png" LogicalName="computer.png" />
+        <EmbeddedResource Include="resources/16_document-open.png" LogicalName="16_document-open.png" />
+        <EmbeddedResource Include="resources/32_document-open.png" LogicalName="32_document-open.png" />
+        <EmbeddedResource Include="resources/document-open.png" LogicalName="document-open.png" />
+        <EmbeddedResource Include="resources/16_folder.png" LogicalName="16_folder.png" />
+        <EmbeddedResource Include="resources/folder-new.png" LogicalName="folder-new.png" />
+        <EmbeddedResource Include="resources/folder.png" LogicalName="folder.png" />
+        <EmbeddedResource Include="resources/16_folder-remote.png" LogicalName="16_folder-remote.png" />
+        <EmbeddedResource Include="resources/32_folder-remote.png" LogicalName="32_folder-remote.png" />
+        <EmbeddedResource Include="resources/folder-remote.png" LogicalName="folder-remote.png" />
+        <EmbeddedResource Include="resources/go-previous.png" LogicalName="go-previous.png" />
+        <EmbeddedResource Include="resources/go-top.png" LogicalName="go-top.png" />
+        <EmbeddedResource Include="resources/22_page-magnifier.png" LogicalName="22_page-magnifier.png" />
+        <EmbeddedResource Include="resources/preferences-system-windows.png" LogicalName="preferences-system-windows.png" />
+        <EmbeddedResource Include="resources/16_printer.png" LogicalName="16_printer.png" />
+        <EmbeddedResource Include="resources/32_printer.png" LogicalName="32_printer.png" />
+        <EmbeddedResource Include="resources/text-x-generic.png" LogicalName="text-x-generic.png" />
+        <EmbeddedResource Include="resources/16_user-desktop.png" LogicalName="16_user-desktop.png" />
+        <EmbeddedResource Include="resources/32_user-desktop.png" LogicalName="32_user-desktop.png" />
+        <EmbeddedResource Include="resources/user-desktop.png" LogicalName="user-desktop.png" />
+        <EmbeddedResource Include="resources/16_user-home.png" LogicalName="16_user-home.png" />
+        <EmbeddedResource Include="resources/32_user-home.png" LogicalName="32_user-home.png" />
+        <EmbeddedResource Include="resources/user-home.png" LogicalName="user-home.png" />
+        <EmbeddedResource Include="resources/16_dialog-error.png" LogicalName="16_dialog-error.png" />
+        <EmbeddedResource Include="resources/16_dialog-information.png" LogicalName="16_dialog-information.png" />
+        <EmbeddedResource Include="resources/16_dialog-warning.png" LogicalName="16_dialog-warning.png" />
+        <EmbeddedResource Include="resources/1-up.png" LogicalName="1-up.png" />
+        <EmbeddedResource Include="resources/2-up.png" LogicalName="2-up.png" />
+        <EmbeddedResource Include="resources/3-up.png" LogicalName="3-up.png" />
+        <EmbeddedResource Include="resources/4-up.png" LogicalName="4-up.png" />
+        <EmbeddedResource Include="resources/6-up.png" LogicalName="6-up.png" />
+        <EmbeddedResource Include="resources/nav_delete.png" LogicalName="nav_delete.png" />
+        <EmbeddedResource Include="resources/nav_end.png" LogicalName="nav_end.png" />
+        <EmbeddedResource Include="resources/nav_first.png" LogicalName="nav_first.png" />
+        <EmbeddedResource Include="resources/nav_previous.png" LogicalName="nav_previous.png" />
+        <EmbeddedResource Include="resources/nav_next.png" LogicalName="nav_next.png" />
+        <EmbeddedResource Include="resources/nav_plus.png" LogicalName="nav_plus.png" />
+        <EmbeddedResource Include="resources/image-missing.png" LogicalName="image-missing.png" />
+        <EmbeddedResource Include="resources/image-x-generic.png" LogicalName="image-x-generic.png" />
+        <EmbeddedResource Include="resources/propertygrid-alphabetical.png" LogicalName="propertygrid-alphabetical.png" />
+        <EmbeddedResource Include="resources/propertygrid-categorized.png" LogicalName="propertygrid-categorized.png" />
+        <EmbeddedResource Include="resources/EventsTab.bmp" LogicalName="EventsTab.bmp" />
+        <EmbeddedResource Include="resources/PropertiesTab.bmp" LogicalName="PropertiesTab.bmp" />
+        <EmbeddedResource Include="resources/propertygrid-propertypages.png" LogicalName="propertygrid-propertypages.png" />
+        <EmbeddedResource Include="resources/mono.ico" LogicalName="mono.ico" />
+        <EmbeddedResource Include="resources/errorProvider.ico" LogicalName="errorProvider.ico" />
 
         <Compile Include="../../build/common/Consts.cs" />
         <Compile Include="../../build/common/MonoTODOAttribute.cs" />

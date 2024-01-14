@@ -18,10 +18,10 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -66,12 +66,12 @@ namespace System.Drawing
 				family = FontFamily.GenericSansSerif;
 			}
 
-			setProperties (family, emSize, style, unit, charSet, isVertical);           
+			setProperties (family, emSize, style, unit, charSet, isVertical);
 			Status status = GDIPlus.GdipCreateFont (family.NativeFamily, emSize,  style, unit, out fontObject);
-			
+
 			if (status == Status.FontStyleNotFound)
 				throw new ArgumentException (Locale.GetText ("Style {0} isn't supported by font {1}.", style.ToString (), familyName));
-				
+
 			GDIPlus.CheckStatus (status);
 		}
 
@@ -86,7 +86,7 @@ namespace System.Drawing
 			size = (float)info.GetValue("Size", typeof(float));
 			style = (FontStyle)info.GetValue("Style", typeof(FontStyle));
 			unit = (GraphicsUnit)info.GetValue("Unit", typeof(GraphicsUnit));
- 
+
 			CreateFont(name, size, style, unit, DefaultCharSet, false);
 		}
 
@@ -123,7 +123,7 @@ namespace System.Drawing
 		{
 			float inchs = 0;
 			nTrg = 0;
-			
+
 			switch (fromUnit) {
 			case GraphicsUnit.Display:
 				inchs = nSrc / 75f;
@@ -176,7 +176,7 @@ namespace System.Drawing
 		void setProperties (FontFamily family, float emSize, FontStyle style, GraphicsUnit unit, byte charSet, bool isVertical)
 		{
 			_name = family.Name;
-			_fontFamily = family;			
+			_fontFamily = family;
 			_size = emSize;
 
 			// MS throws ArgumentException, if unit is set to GraphicsUnit.Display
@@ -184,14 +184,14 @@ namespace System.Drawing
 			_style = style;
 			_gdiCharSet = charSet;
 			_gdiVerticalFont = isVertical;
-			
+
 			unitConversion (unit, GraphicsUnit.Point, emSize, out  _sizeInPoints);
-						
+
 			_bold = _italic = _strikeout = _underline = false;
 
                         if ((style & FontStyle.Bold) == FontStyle.Bold)
                                 _bold = true;
-				
+
                         if ((style & FontStyle.Italic) == FontStyle.Italic)
                                _italic = true;
 
@@ -199,13 +199,13 @@ namespace System.Drawing
                                 _strikeout = true;
 
                         if ((style & FontStyle.Underline) == FontStyle.Underline)
-                                _underline = true;                  
+                                _underline = true;
 		}
 
 		public static Font FromHfont (IntPtr hfont)
 		{
 			IntPtr			newObject;
-			IntPtr			hdc;			
+			IntPtr			hdc;
 			FontStyle		newStyle = FontStyle.Regular;
 			float			newSize;
 			LOGFONT			lf = new LOGFONT ();
@@ -217,7 +217,7 @@ namespace System.Drawing
 			}
 
 			if (GDIPlus.RunningOnUnix ()) {
-				// If we're on Unix we use our private gdiplus API to avoid Wine 
+				// If we're on Unix we use our private gdiplus API to avoid Wine
 				// dependencies in S.D
 				Status s = GDIPlus.GdipCreateFontFromHfont (hfont, out newObject, ref lf);
 				GDIPlus.CheckStatus (s);
@@ -237,7 +237,7 @@ namespace System.Drawing
 					GDIPlus.ReleaseDC (IntPtr.Zero, hdc);
 				}
 			}
-			
+
 			if (lf.lfItalic != 0) {
 				newStyle |= FontStyle.Italic;
 			}
@@ -282,15 +282,15 @@ namespace System.Drawing
 
 		internal Font (IntPtr newFontObject, string familyName, FontStyle style, float size)
 		{
-			FontFamily fontFamily;			
-			
+			FontFamily fontFamily;
+
 			try {
 				fontFamily = new FontFamily (familyName);
 			}
 			catch (Exception){
 				fontFamily = FontFamily.GenericSansSerif;
 			}
-			
+
 			setProperties (fontFamily, size, style, GraphicsUnit.Pixel, 0, false);
 			fontObject = newFontObject;
 		}
@@ -299,9 +299,9 @@ namespace System.Drawing
 		{
 			// no null checks, MS throws a NullReferenceException if original is null
 			setProperties (prototype.FontFamily, prototype.Size, newStyle, prototype.Unit, prototype.GdiCharSet, prototype.GdiVerticalFont);
-				
+
 			Status status = GDIPlus.GdipCreateFont (_fontFamily.NativeFamily, Size, Style, Unit, out fontObject);
-			GDIPlus.CheckStatus (status);			
+			GDIPlus.CheckStatus (status);
 		}
 
 		public Font (FontFamily family, float emSize,  GraphicsUnit unit)
@@ -341,7 +341,7 @@ namespace System.Drawing
 				throw new ArgumentNullException ("family");
 
 			Status status;
-			setProperties (family, emSize, style, unit, gdiCharSet,  gdiVerticalFont );		
+			setProperties (family, emSize, style, unit, gdiCharSet,  gdiVerticalFont );
 			status = GDIPlus.GdipCreateFont (family.NativeFamily, emSize,  style,   unit,  out fontObject);
 			GDIPlus.CheckStatus (status);
 		}
@@ -381,7 +381,7 @@ namespace System.Drawing
 			return new Font (this, Style);
 		}
 
-		internal IntPtr NativeObject {            
+		internal IntPtr NativeObject {
 			get {
 				return fontObject;
 			}
@@ -456,10 +456,10 @@ namespace System.Drawing
 				return _name;
 			}
 		}
-		
+
 		public float Size {
 			get {
-				return _size;			
+				return _size;
 			}
 		}
 
@@ -480,7 +480,7 @@ namespace System.Drawing
 				return _strikeout;
 			}
 		}
-		
+
 		private FontStyle _style;
 
 		[Browsable (false)]
@@ -529,7 +529,7 @@ namespace System.Drawing
 
 			if (fnt.FontFamily.Equals (FontFamily) && fnt.Size == Size &&
 			    fnt.Style == Style && fnt.Unit == Unit &&
-			    fnt.GdiCharSet == GdiCharSet && 
+			    fnt.GdiCharSet == GdiCharSet &&
 			    fnt.GdiVerticalFont == GdiVerticalFont)
 				return true;
 			else
@@ -656,17 +656,19 @@ namespace System.Drawing
 				}
 
 				// note: Marshal.WriteByte(object,*) methods are unimplemented on Mono
-				GCHandle gch = GCHandle.Alloc (logFont, GCHandleType.Pinned);
+                IntPtr gch = Marshal.AllocHGlobal (size);
 				try {
-					IntPtr ptr = gch.AddrOfPinnedObject ();
+                    Marshal.StructureToPtr (logFont, copy, false);
+
 					// if GDI+ lfCharSet is 0, then we return (S.D.) 1, otherwise the value is unchanged
-					if (Marshal.ReadByte (ptr, CharSetOffset) == 0) {
-						// set lfCharSet to 1 
-						Marshal.WriteByte (ptr, CharSetOffset, 1);
+					if (Marshal.ReadByte (gch, CharSetOffset) == 0) {
+						// set lfCharSet to 1
+						Marshal.WriteByte (gch, CharSetOffset, 1);
 					}
 				}
-				finally {
-					gch.Free ();
+				finally
+                {
+                    Marshal.FreeHGlobal(gch);
 				}
 
 				// now we can throw, if required

@@ -14,24 +14,26 @@
 
         <SignAssembly>true</SignAssembly>
         <DelaySign>true</DelaySign>
-        <AssemblyOriginatorKeyFile>..\msfinal.pub</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>..\Open.snk</AssemblyOriginatorKeyFile>
 
         <RootNamespace>System.Drawing</RootNamespace>
-        <AssemblyName>XPlat.System.Drawing</AssemblyName>
+        <AssemblyName>System.Drawing.Common</AssemblyName>
+
+      <LangVersion>Latest</LangVersion>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="System.Security.Permissions" Version="8.0.0" />
         <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="Assembly/Mono.ico" />
-        <EmbeddedResource Include="Assembly/Information.ico" />
-        <EmbeddedResource Include="Assembly/Error.ico" />
-        <EmbeddedResource Include="Assembly/Warning.ico" />
-        <EmbeddedResource Include="Assembly/Question.ico" />
-        <EmbeddedResource Include="Assembly/Shield.ico" />
+        <EmbeddedResource Include="Assembly/Mono.ico" LogicalName="Mono.ico" />
+        <EmbeddedResource Include="Assembly/Information.ico" LogicalName="Information.ico" />
+        <EmbeddedResource Include="Assembly/Error.ico" LogicalName="Error.ico" />
+        <EmbeddedResource Include="Assembly/Warning.ico" LogicalName="Warning.ico" />
+        <EmbeddedResource Include="Assembly/Question.ico" LogicalName="Question.ico" />
+        <EmbeddedResource Include="Assembly/Shield.ico" LogicalName="Shield.ico" />
 
         <EmbeddedResource Include="../../../external/corefx/src/System.Drawing.Common/src/Resources/Strings.resx" />
 
